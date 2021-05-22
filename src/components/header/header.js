@@ -63,7 +63,7 @@ const styles = {
     top: 0,
     left: 0,
     backgroundColor: 'transparent',
-    transition: 'all 0.4s ease',
+    transition: 'all 0.4s ease',    
     animation: `${positionAnim} 0.4s ease`,
     '.donate__btn': {
       flexShrink: 0,
