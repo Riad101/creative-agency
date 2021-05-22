@@ -1,11 +1,11 @@
-## Getting Started
+# Creative Agency Landing Page
 
-Install the dependencies and run the development server
+<h3>Technologies Used</h3>
+<li>
+  Next.js
+  React.js
+  Theme-ui  
+  Netlify  
+</li>
 
-```bash
-npm install
-npm run dev
-# or
-yarn
-yarn dev
-```
+<a href="https://suspicious-mccarthy-595e30.netlify.app"><h1>LIVE SITE</h1></a>
