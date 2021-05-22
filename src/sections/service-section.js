@@ -36,8 +36,58 @@ const data = {
 };
 
 export default function ServiceSection() {
+  const [videoOpen, setVideoOpen] = useState(false);
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    setVideoOpen(true);
+  }
   return (
-    <h1>Service Section</h1>
+    <section sx={{ variant: 'section.services' }}>
+      <Container sx={styles.containerBox}>
+        <Box sx={styles.thumbnail}>
+          <Image src={ServiceThumb} alt="Thumbnail" />
+          <Button
+            sx={styles.videoBtn}
+            onClick={handleClick}
+            aria-label="Play Button"
+          >
+          <span>
+            <IoIosPlay/>
+          </span>
+          </Button>
+          <Box sx={styles.shapeBox}>
+            <Image src={shapePattern} alt="shape" />
+          </Box>
+        </Box>
+        <Box sx={styles.contentBox}>
+          <TextFeature subTitle={data.subTitle} title={data.title}/>
+
+          <Grid sx={styles.grid}>
+            {data.features.map((feature)=>(
+              <Box sx={styles.card} key={feature.id}>
+                <Image src={feature.imgSrc} alt={feature.altText} sx={styles.icon}/>
+
+                <Box sx={styles.wrapper}>
+                  <Heading sx={styles.wrapper.title}>{feature.title}</Heading>
+                  <Text sx={styles.wrapper.subTitle}>{feature.text}</Text>
+                </Box>
+              </Box>
+            ))}
+          </Grid>
+        </Box>    
+
+      </Container>
+      <ModalVideo
+        channel="youtube"
+        isOpen={videoOpen}
+        videoId="CBi0HUmTrkI"
+        onClose={()=> setVideoOpen(false)}
+      >
+
+      </ModalVideo>
+
+    </section>
   );
 }
 

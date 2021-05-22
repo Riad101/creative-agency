@@ -8,8 +8,13 @@ export default function FeatureCard({
   text,
 }) {
   return (
-    <h1>FeatureCard</h1>
-
+    <Box sx={styles.card}>
+      <Image src={src} alt={altText} sx={styles.img} />
+      <Box sx={styles.wrapper}>
+        <Heading sx={styles.wrapper.title}>{title}</Heading>
+        <Text sx={styles.wrapper.subTitle}>{text}</Text>
+      </Box>
+    </Box>
   );
 }
 
